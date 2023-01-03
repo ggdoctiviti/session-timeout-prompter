@@ -7,7 +7,7 @@ module SessionTimeoutPrompter
 
     initializer "session_timeout_prompter.include_prompt_helper" do |app|
       ActiveSupport.on_load(:action_controller) do
-        helper SessionTimeoutPrompter::PromptHelper
+        ::ActionController::Base.helper SessionTimeoutPrompter::PromptHelper
       end
     end
 
